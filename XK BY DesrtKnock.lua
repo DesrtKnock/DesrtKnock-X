@@ -1,83 +1,5 @@
---此脚本为开源更新，bro你是用Https抓包抓到的吗，我很看不起你
+--一个破https就搁那装逼，说什么你破解的，我只能说LOL，bro你是用Https抓包抓到的吗，我很看不起你
 --不允许二改
-
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "此缝合脚本由DesrtKnock team更新";Text = "XK脚本中心";Icon = "rbxassetid://123804674960064"})Duration = 8;
-
-    local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-
-setclipboard("XK脚本中心群915207093")
-
 loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoXuAnZang/test-Actuator/refs/heads/main/ThroughSuccess.lua"))()
 local notification = loadstring(game:HttpGet('https://raw.githubusercontent.com/XiaoXuAnZang/test-Actuator/refs/heads/main/notification.lua'))()
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoXuAnZang/test-Actuator/refs/heads/main/Revenantnotification.txt", true))()
@@ -316,10 +238,10 @@ local function HeartbeatUpdate()
 
     local CurrentFPS = #FrameUpdateTable / (LastIteration - Start)
     CurrentFPS = math.floor(CurrentFPS + 0.5)
-
+    
    
     local formattedTime = string.format("%02d:%02d:%02d", os.date("%H"), os.date("%M"), os.date("%S"))
-    LBL.Text = ("XK=" .. formattedTime)
+    LBL.Text = ("XK" .. formattedTime)
 
     -- 彩虹颜色周期
     local rainbowColors = {
@@ -422,7 +344,510 @@ end
 wait(0.1)
 shuaxinlb(true)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/XiaoXuAnZang/UI-Lib/refs/heads/main/V3CHONGZHIUI.txt')))()
-local Window = OrionLib:MakeWindow({IntroText = "XK脚本中心V3",Name = "XK脚本中心 V3丨" ..identifyexecutor() , HidePremium = false, SaveConfig = true, ConfigFolder = ""})
+local Window = OrionLib:MakeWindow({IntroText = "XK脚本中心V4",Name = "XK脚本中心 V4丨" ..identifyexecutor() , HidePremium = false, SaveConfig = true, ConfigFolder = ""})
+
+
+local plrlist = {}
+local plr = nil
+for i, v in pairs(game:GetService("Players"):GetChildren()) do
+table.insert(plrlist,v.Name)
+end
+
+local Tab = Window:MakeTab({
+	Name = "甩飞",
+	Icon = "rbxassetid://131925604610622",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+    Name = '输入名字/你要甩飞的玩家',
+    Default = '',
+    TextDisappear = true,
+    Callback = function(Value)
+for i, b in pairs(game:GetService("Workspace"):GetChildren()) do
+if m == b.name then
+plr = m
+end
+end
+    end   
+})
+
+Tab:AddButton ({
+	Name = "刷新一次/更新玩家的进入",
+	Callback = function ()
+drop:Clear()
+for i, v in pairs(game.Players:GetChildren()) do
+if v:IsA("Player") then
+drop:Add(v.Name)
+end
+end
+	end
+})
+
+Tab:AddButton ({
+	Name = "甩飞所有/玩家",
+	Callback = function ()
+local Targets = {"All"}
+
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
+
+local AllBool = false
+
+local GetPlayer = function(Name)
+    Name = Name:lower()
+    if Name == "all" or Name == "others" then
+        AllBool = true
+        return
+    elseif Name == "random" then
+        local GetPlayers = Players:GetPlayers()
+        if table.find(GetPlayers,Player) then table.remove(GetPlayers,table.find(GetPlayers,Player)) end
+        return GetPlayers[math.random(#GetPlayers)]
+    elseif Name ~= "random" and Name ~= "all" and Name ~= "others" then
+        for _,x in next, Players:GetPlayers() do
+            if x ~= Player then
+                if x.Name:lower():match("^"..Name) then
+                    return x;
+                elseif x.DisplayName:lower():match("^"..Name) then
+                    return x;
+                end
+            end
+        end
+    else
+        return
+    end
+end
+
+local Message = function(_Title, _Text, Time)
+    game:GetService("StarterGui"):SetCore("SendNotification", {Title = _Title, Text = _Text, Duration = Time})
+end
+
+local SkidFling = function(TargetPlayer)
+    local Character = Player.Character
+    local Humanoid = Character and Character:FindFirstChildOfClass("Humanoid")
+    local RootPart = Humanoid and Humanoid.RootPart
+
+    local TCharacter = TargetPlayer.Character
+    local THumanoid
+    local TRootPart
+    local THead
+    local Accessory
+    local Handle
+
+    if TCharacter:FindFirstChildOfClass("Humanoid") then
+        THumanoid = TCharacter:FindFirstChildOfClass("Humanoid")
+    end
+    if THumanoid and THumanoid.RootPart then
+        TRootPart = THumanoid.RootPart
+    end
+    if TCharacter:FindFirstChild("Head") then
+        THead = TCharacter.Head
+    end
+    if TCharacter:FindFirstChildOfClass("Accessory") then
+        Accessory = TCharacter:FindFirstChildOfClass("Accessory")
+    end
+    if Accessoy and Accessory:FindFirstChild("Handle") then
+        Handle = Accessory.Handle
+    end
+
+    if Character and Humanoid and RootPart then
+        if RootPart.Velocity.Magnitude < 50 then
+            getgenv().OldPos = RootPart.CFrame
+        end
+        if THumanoid and THumanoid.Sit and not AllBool then
+            return Message("Error Occurred", "Targeting is sitting", 5) -- u can remove dis part if u want lol
+        end
+        if THead then
+            workspace.CurrentCamera.CameraSubject = THead
+        elseif not THead and Handle then
+            workspace.CurrentCamera.CameraSubject = Handle
+        elseif THumanoid and TRootPart then
+            workspace.CurrentCamera.CameraSubject = THumanoid
+        end
+        if not TCharacter:FindFirstChildWhichIsA("BasePart") then
+            return
+        end
+
+        local FPos = function(BasePart, Pos, Ang)
+            RootPart.CFrame = CFrame.new(BasePart.Position) * Pos * Ang
+            Character:SetPrimaryPartCFrame(CFrame.new(BasePart.Position) * Pos * Ang)
+            RootPart.Velocity = Vector3.new(9e7, 9e7 * 10, 9e7)
+            RootPart.RotVelocity = Vector3.new(9e8, 9e8, 9e8)
+        end
+
+        local SFBasePart = function(BasePart)
+            local TimeToWait = 2
+            local Time = tick()
+            local Angle = 0
+
+            repeat
+                if RootPart and THumanoid then
+                    if BasePart.Velocity.Magnitude < 50 then
+                        Angle = Angle + 100
+
+                        FPos(BasePart, CFrame.new(0, 1.5, 0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.25, CFrame.Angles(math.rad(Angle),0 ,0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, 0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.25, CFrame.Angles(math.rad(Angle), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(2.25, 1.5, -2.25) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.25, CFrame.Angles(math.rad(Angle), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(-2.25, -1.5, 2.25) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.25, CFrame.Angles(math.rad(Angle), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, 1.5, 0) + THumanoid.MoveDirection,CFrame.Angles(math.rad(Angle), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, 0) + THumanoid.MoveDirection,CFrame.Angles(math.rad(Angle), 0, 0))
+                        task.wait()
+                    else
+                        FPos(BasePart, CFrame.new(0, 1.5, THumanoid.WalkSpeed), CFrame.Angles(math.rad(90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, -THumanoid.WalkSpeed), CFrame.Angles(0, 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, 1.5, THumanoid.WalkSpeed), CFrame.Angles(math.rad(90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, 1.5, TRootPart.Velocity.Magnitude / 1.25), CFrame.Angles(math.rad(90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, -TRootPart.Velocity.Magnitude / 1.25), CFrame.Angles(0, 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, 1.5, TRootPart.Velocity.Magnitude / 1.25), CFrame.Angles(math.rad(90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, 0), CFrame.Angles(math.rad(90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, 0), CFrame.Angles(0, 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5 ,0), CFrame.Angles(math.rad(-90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, 0), CFrame.Angles(0, 0, 0))
+                        task.wait()
+                    end
+                else
+                    break
+                end
+            until BasePart.Velocity.Magnitude > 500 or BasePart.Parent ~= TargetPlayer.Character or TargetPlayer.Parent ~= Players or not TargetPlayer.Character == TCharacter or THumanoid.Sit or Humanoid.Health <= 0 or tick() > Time + TimeToWait
+        end
+
+        workspace.FallenPartsDestroyHeight = 0/0
+
+        local BV = Instance.new("BodyVelocity")
+        BV.Name = "EpixVel"
+        BV.Parent = RootPart
+        BV.Velocity = Vector3.new(9e8, 9e8, 9e8)
+        BV.MaxForce = Vector3.new(1/0, 1/0, 1/0)
+
+        Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated, false)
+
+        if TRootPart and THead then
+            if (TRootPart.CFrame.p - THead.CFrame.p).Magnitude > 5 then
+                SFBasePart(THead)
+            else
+                SFBasePart(TRootPart)
+            end
+        elseif TRootPart and not THead then
+            SFBasePart(TRootPart)
+        elseif not TRootPart and THead then
+            SFBasePart(THead)
+        elseif not TRootPart and not THead and Accessory and Handle then
+            SFBasePart(Handle)
+        else
+            return Message("Error Occurred", "Target is missing everything", 5)
+        end
+
+        BV:Destroy()
+        Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated, true)
+        workspace.CurrentCamera.CameraSubject = Humanoid
+
+        repeat
+            RootPart.CFrame = getgenv().OldPos * CFrame.new(0, .5, 0)
+            Character:SetPrimaryPartCFrame(getgenv().OldPos * CFrame.new(0, .5, 0))
+            Humanoid:ChangeState("GettingUp")
+            table.foreach(Character:GetChildren(), function(_, x)
+                if x:IsA("BasePart") then
+                    x.Velocity, x.RotVelocity = Vector3.new(), Vector3.new()
+                end
+            end)
+            task.wait()
+        until (RootPart.Position - getgenv().OldPos.p).Magnitude < 25
+        workspace.FallenPartsDestroyHeight = getgenv().FPDH
+    else
+        return Message("Error Occurred", "Random error", 5)
+    end
+end
+
+if Targets[1] then for _,x in next, Targets do GetPlayer(x) end else return end
+
+if AllBool then
+    for _,x in next, Players:GetPlayers() do
+        SkidFling(x)
+    end
+end
+
+for _,x in next, Targets do
+    if GetPlayer(x) and GetPlayer(x) ~= Player then
+        if GetPlayer(x).UserId ~= 1414978355 then
+            local TPlayer = GetPlayer(x)
+            if TPlayer then
+                SkidFling(TPlayer)
+            end
+        else
+            Message("Error Occurred", "This user is whitelisted! (Owner)", 5)
+        end
+    elseif not GetPlayer(x) and not AllBool then
+        Message("Error Occurred", "Username Invalid", 5)
+    end
+end
+	end
+})    
+
+Tab:AddToggle({
+	Name = "循环甩飞/你输入的玩家",
+	Default = false,
+	Callback = function(t)
+if plr == nil then
+ elseif plr ~= nil then
+getgenv().autofling = t
+spawn(function()
+while autofling do wait()
+pcall(function()
+local Targets = {plr}
+
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
+
+local AllBool = false
+
+local GetPlayer = function(Name)
+    Name = Name:lower()
+    if Name == "all" or Name == "others" then
+        AllBool = true
+        return
+    elseif Name == "random" then
+        local GetPlayers = Players:GetPlayers()
+        if table.find(GetPlayers,Player) then table.remove(GetPlayers,table.find(GetPlayers,Player)) end
+        return GetPlayers[math.random(#GetPlayers)]
+    elseif Name ~= "random" and Name ~= "all" and Name ~= "others" then
+        for _,x in next, Players:GetPlayers() do
+            if x ~= Player then
+                if x.Name:lower():match("^"..Name) then
+                    return x;
+                elseif x.DisplayName:lower():match("^"..Name) then
+                    return x;
+                end
+            end
+        end
+    else
+        return
+    end
+end
+
+local Message = function(_Title, _Text, Time)
+    game:GetService("StarterGui"):SetCore("SendNotification", {Title = _Title, Text = _Text, Duration = Time})
+end
+
+local SkidFling = function(TargetPlayer)
+    local Character = Player.Character
+    local Humanoid = Character and Character:FindFirstChildOfClass("Humanoid")
+    local RootPart = Humanoid and Humanoid.RootPart
+
+    local TCharacter = TargetPlayer.Character
+    local THumanoid
+    local TRootPart
+    local THead
+    local Accessory
+    local Handle
+
+    if TCharacter:FindFirstChildOfClass("Humanoid") then
+        THumanoid = TCharacter:FindFirstChildOfClass("Humanoid")
+    end
+    if THumanoid and THumanoid.RootPart then
+        TRootPart = THumanoid.RootPart
+    end
+    if TCharacter:FindFirstChild("Head") then
+        THead = TCharacter.Head
+    end
+    if TCharacter:FindFirstChildOfClass("Accessory") then
+        Accessory = TCharacter:FindFirstChildOfClass("Accessory")
+    end
+    if Accessoy and Accessory:FindFirstChild("Handle") then
+        Handle = Accessory.Handle
+    end
+
+    if Character and Humanoid and RootPart then
+        if RootPart.Velocity.Magnitude < 50 then
+            getgenv().OldPos = RootPart.CFrame
+        end
+        if THumanoid and THumanoid.Sit and not AllBool then
+            return Message("Error Occurred", "Targeting is sitting", 5) -- u can remove dis part if u want lol
+        end
+        if THead then
+            workspace.CurrentCamera.CameraSubject = THead
+        elseif not THead and Handle then
+            workspace.CurrentCamera.CameraSubject = Handle
+        elseif THumanoid and TRootPart then
+            workspace.CurrentCamera.CameraSubject = THumanoid
+        end
+        if not TCharacter:FindFirstChildWhichIsA("BasePart") then
+            return
+        end
+
+        local FPos = function(BasePart, Pos, Ang)
+            RootPart.CFrame = CFrame.new(BasePart.Position) * Pos * Ang
+            Character:SetPrimaryPartCFrame(CFrame.new(BasePart.Position) * Pos * Ang)
+            RootPart.Velocity = Vector3.new(9e7, 9e7 * 10, 9e7)
+            RootPart.RotVelocity = Vector3.new(9e8, 9e8, 9e8)
+        end
+
+        local SFBasePart = function(BasePart)
+            local TimeToWait = 2
+            local Time = tick()
+            local Angle = 0
+
+            repeat
+                if RootPart and THumanoid then
+                    if BasePart.Velocity.Magnitude < 50 then
+                        Angle = Angle + 100
+
+                        FPos(BasePart, CFrame.new(0, 1.5, 0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.25, CFrame.Angles(math.rad(Angle),0 ,0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, 0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.25, CFrame.Angles(math.rad(Angle), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(2.25, 1.5, -2.25) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.25, CFrame.Angles(math.rad(Angle), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(-2.25, -1.5, 2.25) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.25, CFrame.Angles(math.rad(Angle), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, 1.5, 0) + THumanoid.MoveDirection,CFrame.Angles(math.rad(Angle), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, 0) + THumanoid.MoveDirection,CFrame.Angles(math.rad(Angle), 0, 0))
+                        task.wait()
+                    else
+                        FPos(BasePart, CFrame.new(0, 1.5, THumanoid.WalkSpeed), CFrame.Angles(math.rad(90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, -THumanoid.WalkSpeed), CFrame.Angles(0, 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, 1.5, THumanoid.WalkSpeed), CFrame.Angles(math.rad(90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, 1.5, TRootPart.Velocity.Magnitude / 1.25), CFrame.Angles(math.rad(90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, -TRootPart.Velocity.Magnitude / 1.25), CFrame.Angles(0, 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, 1.5, TRootPart.Velocity.Magnitude / 1.25), CFrame.Angles(math.rad(90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, 0), CFrame.Angles(math.rad(90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, 0), CFrame.Angles(0, 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5 ,0), CFrame.Angles(math.rad(-90), 0, 0))
+                        task.wait()
+
+                        FPos(BasePart, CFrame.new(0, -1.5, 0), CFrame.Angles(0, 0, 0))
+                        task.wait()
+                    end
+                else
+                    break
+                end
+            until BasePart.Velocity.Magnitude > 500 or BasePart.Parent ~= TargetPlayer.Character or TargetPlayer.Parent ~= Players or not TargetPlayer.Character == TCharacter or THumanoid.Sit or Humanoid.Health <= 0 or tick() > Time + TimeToWait
+        end
+
+        workspace.FallenPartsDestroyHeight = 0/0
+
+        local BV = Instance.new("BodyVelocity")
+        BV.Name = "EpixVel"
+        BV.Parent = RootPart
+        BV.Velocity = Vector3.new(9e8, 9e8, 9e8)
+        BV.MaxForce = Vector3.new(1/0, 1/0, 1/0)
+
+        Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated, false)
+
+        if TRootPart and THead then
+            if (TRootPart.CFrame.p - THead.CFrame.p).Magnitude > 5 then
+                SFBasePart(THead)
+            else
+                SFBasePart(TRootPart)
+            end
+        elseif TRootPart and not THead then
+            SFBasePart(TRootPart)
+        elseif not TRootPart and THead then
+            SFBasePart(THead)
+        elseif not TRootPart and not THead and Accessory and Handle then
+            SFBasePart(Handle)
+        else
+            return Message("Error Occurred", "Target is missing everything", 5)
+        end
+
+        BV:Destroy()
+        Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated, true)
+        workspace.CurrentCamera.CameraSubject = Humanoid
+
+        repeat
+            RootPart.CFrame = getgenv().OldPos * CFrame.new(0, .5, 0)
+            Character:SetPrimaryPartCFrame(getgenv().OldPos * CFrame.new(0, .5, 0))
+            Humanoid:ChangeState("GettingUp")
+            table.foreach(Character:GetChildren(), function(_, x)
+                if x:IsA("BasePart") then
+                    x.Velocity, x.RotVelocity = Vector3.new(), Vector3.new()
+                end
+            end)
+            task.wait()
+        until (RootPart.Position - getgenv().OldPos.p).Magnitude < 25
+        workspace.FallenPartsDestroyHeight = getgenv().FPDH
+    else
+        return Message("Error Occurred", "Random error", 5)
+    end
+end
+
+if Targets[1] then for _,x in next, Targets do GetPlayer(x) end else return end
+
+if AllBool then
+    for _,x in next, Players:GetPlayers() do
+        SkidFling(x)
+    end
+end
+
+for _,x in next, Targets do
+    if GetPlayer(x) and GetPlayer(x) ~= Player then
+        if GetPlayer(x).UserId ~= 1414978355 then
+            local TPlayer = GetPlayer(x)
+            if TPlayer then
+                SkidFling(TPlayer)
+            end
+        else
+            Message("Error Occurred", "This user is whitelisted! (Owner)", 5)
+        end
+    elseif not GetPlayer(x) and not AllBool then
+        Message("Error Occurred", "Username Invalid", 5)
+    end
+end
+end)
+end
+end)
+end
+	end
+})
 
 local Tab = Window:MakeTab({
 	Name = "DOORS音频",
@@ -683,13 +1108,64 @@ Tab:AddToggle({
 game:GetService("RunService").Heartbeat:Connect(teleportPlayer)
 
 local Tab = Window:MakeTab({
-    Name = "通用功能",
+    Name = "玩家/通用/功能",
     Icon = "rbxassetid://131925604610622",
     PremiumOnly = false
 })
 
 Tab:AddTextbox({
-	Name = "速度防拉回",
+	Name = "防拉回/可开关/速度/推荐",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(v)
+    Speed = v
+	end	 
+})
+
+Tab:AddToggle({
+	Name = "启用上面的速度/否则无效",
+	Default = false,
+	Callback = function(v)
+            if v == true then
+                sudu = game:GetService("RunService").Heartbeat:Connect(function()
+                    if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.Humanoid and game:GetService("Players").LocalPlayer.Character.Humanoid.Parent then
+                        if game:GetService("Players").LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 then
+                            game:GetService("Players").LocalPlayer.Character:TranslateBy(game:GetService("Players").LocalPlayer.Character.Humanoid.MoveDirection * Speed / 20)
+                        end
+                    end
+                end)
+            elseif not v and sudu then
+                sudu:Disconnect()
+                sudu = nil
+            end
+	end
+})
+
+Tab:AddTextbox({
+    Name = '修改人物范围',
+    Default = '',
+    TextDisappear = true,
+    Callback = function(Value)
+        _G.HeadSize = Value
+        _G.Disabled = true
+        game:GetService('RunService').RenderStepped:connect(function()
+        if _G.Disabled then
+            for i,v in next, game:GetService('Players'):GetPlayers() do
+                if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+                pcall(function()
+                    v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+                    v.Character.HumanoidRootPart.Transparency = 0.40
+                    v.Character.HumanoidRootPart.CanCollide = false
+                    end)
+                    end
+                end
+            end
+        end)
+    end   
+})
+
+Tab:AddTextbox({
+	Name = "速度防拉回/不推荐",
 	Default = "",
 	TextDisappear = true,
 	Callback = function(king)
@@ -711,8 +1187,6 @@ while tpwalking and hb:Wait() and chr and hum and hum.Parent do
 end
 	end	 
 })
-
-
 
 Tab:AddTextbox({
 
@@ -761,28 +1235,7 @@ Tab:AddTextbox({
                 })
 	end
 })
-Tab:AddTextbox({
-    Name = '修改人物范围',
-    Default = '',
-    TextDisappear = true,
-    Callback = function(Value)
-        _G.HeadSize = Value
-        _G.Disabled = true
-        game:GetService('RunService').RenderStepped:connect(function()
-        if _G.Disabled then
-            for i,v in next, game:GetService('Players'):GetPlayers() do
-                if v.Name ~= game:GetService('Players').LocalPlayer.Name then
-                pcall(function()
-                    v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
-                    v.Character.HumanoidRootPart.Transparency = 0.40
-                    v.Character.HumanoidRootPart.CanCollide = false
-                    end)
-                    end
-                end
-            end
-        end)
-    end   
-})
+
 Tab:AddTextbox({
 	Name = "修改血量",
 	Default = "血量",
@@ -3632,6 +4085,13 @@ local OPOTab = Window:MakeTab({
 	Name = " Doors脚本",
 	Icon = "rbxassetid://131925604610622",
 	PremiumOnly = false
+})
+
+OPOTab:AddButton({
+	Name = "DesrtKnock v1 小玄奘制作/测试版/制作中",
+	Callback = function()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoXuAnZang/XKscript/refs/heads/main/DOORS.txt"))()
+  	end    
 })
 
 OPOTab:AddButton({
@@ -15044,16 +15504,9 @@ local coTab = Window:MakeTab({
 })
 
 coTab:AddButton({
-    Name="格蕾丝脚本",
+    Name="格蕾丝脚本/小玄奘，剑修制作",
     Callback=function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoXuAnZang/XKscript/refs/heads/main/GraceXJ.lua"))()
-    end
-})
-
-coTab:AddButton({
-    Name="格蕾丝脚本",
-    Callback=function()
-            loadstring(game:HttpGet("https://github.com/as30326/Grace-/blob/main/Grace%E8%84%9A%E6%9C%AC%E6%AD%A3%E6%9D%83.lua"))()
     end
 })
 
@@ -16109,4 +16562,195 @@ Tab:AddToggle({
 	end
 })
 
+local Tab = Window:MakeTab({
+	Name = "杀手vs警长",
+	Icon = "rbxassetid://131925604610622",
+	PremiumOnly = false
+})
+
+Tab:AddButton ({
+	Name = "透视ESP",
+	Callback = function ()
+    while wait(1) do
+        local function ApplyESP(v)
+            if	v.Character and v.Character:FindFirstChildOfClass'Humanoid' then
+            v.Character.Humanoid.NameDisplayDistance = 9e9
+            v.Character.Humanoid.NameOcclusion = "NoOcclusion"
+            v.Character.Humanoid.HealthDisplayDistance = 9e9
+            v.Character.Humanoid.HealthDisplayType = "AlwaysOn"
+            v.Character.Humanoid.Health = v.Character.Humanoid.Health -- triggers changed
+            end
+        end
+        for i,v in pairs(game.Players:GetPlayers()) do
+        ApplyESP(v)
+            v.CharacterAdded:Connect(function()
+            task.wait(0.33)
+            ApplyESP(v)
+            end)
+        end
+        
+        game.Players.PlayerAdded:Connect(function(v)
+        ApplyESP(v)
+        v.CharacterAdded:Connect(function()
+            task.wait(0.33)
+            ApplyESP(v)
+        end)
+        end)
+    end
+	end
+})
+
+Tab:AddToggle({
+	Name = "自动追踪",
+	Default = false,
+	Callback = function(Value)
+    while not game:IsLoaded() do
+        task.wait()
+    end
+    
+    if game.PlaceId ~= 12355337193 then
+        return
+    end
+    
+    local plrs = game:GetService("Players")
+    local rs = game:GetService("ReplicatedStorage")
+    local shootRemote = rs.Remotes.Shoot
+    
+    local function isTeammate(model)
+        local highlight = model:FindFirstChild("Highlight")
+        return highlight and highlight.FillColor == Color3.fromRGB(30, 214, 134)
+    end
+    
+    local function isRagdoll(model)
+        return not model:FindFirstChild("Animate")
+    end
+    
+    local plr = plrs.LocalPlayer
+    local mouse = plr:GetMouse()
+    local camera = workspace.CurrentCamera
+    
+    local r15BodyParts = {
+        "Head",
+        "UpperTorso",
+        "LowerTorso",
+        "LeftUpperArm",
+        "LeftLowerArm",
+        "LeftHand",
+        "RightUpperArm",
+        "RightLowerArm",
+        "RightHand",
+        "LeftUpperLeg",
+        "LeftLowerLeg",
+        "LeftFoot",
+        "RightUpperLeg",
+        "RightLowerLeg",
+        "RightFoot"
+    }
+    
+    local function isCharacterOnScreen(playerCharacter)
+        local playerHead = playerCharacter:WaitForChild("Head")
+        local screenPos, isOnScreen = camera:WorldToViewportPoint(playerHead.Position)
+        return isOnScreen
+    end
+    
+    local function getClosestPlayerToMouse()
+        local closestPlayer = nil
+        local shortestDistance = math.huge
+        for _, otherPlayer in plrs:GetPlayers() do
+            local char = otherPlayer.Character
+            if (not char) or otherPlayer == plr or isTeammate(char) or isRagdoll(char) or (not workspace:FindFirstChild(otherPlayer.Name)) or (not isCharacterOnScreen(char)) then
+                continue
+            end
+            if char:FindFirstChild("HumanoidRootPart") then
+                local playerPosition = char.HumanoidRootPart.Position
+                local mousePosition = mouse.Hit.Position
+                local distance = (mousePosition - playerPosition).magnitude
+                if distance < shortestDistance then
+                    shortestDistance = distance
+                    closestPlayer = otherPlayer
+                end
+            end
+        end
+        return closestPlayer
+    end
+    
+    mouse.Button1Down:Connect(function()
+        if plr.Character:FindFirstChildOfClass("Tool") then
+            local closestPlayer = getClosestPlayerToMouse()
+            if closestPlayer then
+                shootRemote:FireServer(Vector3.new(1,1,1), Vector3.new(1,1,1), closestPlayer.Character[r15BodyParts[math.random(1,#r15BodyParts)]], Vector3.new(1,1,1))
+            end
+        end
+    end)
+	end
+})
+
+Tab:AddTextbox({
+	Name = "范围",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(king)
+    _G.HeadSize = v
+	_G.Disabled = true
+		game:GetService('RunService').RenderStepped:connect(function()
+			if _G.Disabled then
+				for i,v in next, game:GetService('Players'):GetPlayers() do
+				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+					pcall(function()
+					v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+					v.Character.HumanoidRootPart.Transparency = 0.9
+					v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really black")
+					v.Character.HumanoidRootPart.Material = "Neon"
+					v.Character.HumanoidRootPart.CanCollide = false
+				end)
+			end
+		end
+	end
+end)
+	end	 
+})
+
+local Tab = Window:MakeTab({
+	Name = "admin",
+	Icon = "rbxassetid://131925604610622",
+	PremiumOnly = false
+})
+
+Tab:AddButton ({
+	Name = "单次传送全图人",
+	Callback = function ()
+game:GetService("ReplicatedStorage"):WaitForChild("ALLTeleportEvent"):FireServer()
+	end
+})
+
+Tab:AddButton ({
+	Name = "单次全图杀人",
+	Callback = function ()
+game:GetService("ReplicatedStorage"):WaitForChild("KillAllEvent"):FireServer()
+	end
+})
+
+Tab:AddToggle({
+	Name = "自动杀死全图人",
+	Default = false,
+	Callback = function(Value)
+toggle = Value
+while toggle do wait()
+game:GetService("ReplicatedStorage"):WaitForChild("KillAllEvent"):FireServer()
+
+    end
+	end
+})
+
+Tab:AddToggle({
+	Name = "自动传送全图人",
+	Default = false,
+	Callback = function(Value)
+toggle = Value
+while toggle do wait()
+game:GetService("ReplicatedStorage"):WaitForChild("ALLTeleportEvent"):FireServer()
+
+    end
+	end
+})
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoFenHG/XilolHHG/refs/heads/main/free"))()
