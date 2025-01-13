@@ -172,6 +172,81 @@ function esp(what,color,core,name)
     return ret 
 end
 
+local bai = {
+    axedupe = false,
+    soltnumber = "1",
+    waterwalk = false,
+    awaysday = false,
+    awaysdnight = false,
+    nofog = false,
+    axeflying = false,
+    playernamedied = "",
+    tptree = "",
+    moneyaoumt = 1,
+    moneytoplayername = "",
+    donationRecipient = tostring(game.Players.LocalPlayer),
+    autodropae = false,
+    farAxeEquip = nil,
+    cuttreeselect = "Generic",
+    autofarm = false,
+    PlankToBlueprint = nil,
+    plankModel = nil,
+    blueprintModel = nil,
+    saymege = "",
+    autosay = false,
+    saymount = 1,
+    sayfast = false,
+    autofarm1 = false,
+    bringamount = 1,
+    bringtree = false,
+    dxmz = "",
+    color = 0,
+    0,
+    0,
+    zlwjia = "",
+    mtwjia = nil,
+    zix = 1,
+    zlz = 3,
+    axeFling = nil,
+    itemtoopen = "",
+    openItem = nil,
+    car = nil,
+    load = false,
+    autobuyamount = 1,
+    autopick = false,
+    loaddupeaxewaittime = 3.1,
+    walkspeed = 16,
+    JumpPower = 50,
+    pickupaxeamount = 1,
+    whthmose = false,
+    itemset = nil,
+    LoneCaveAxeDetection = nil,
+    cuttree = false,
+    LoneCaveCharacterAddedDetection = nil,
+    LoneCaveDeathDetection = nil,
+    lovecavecutcframe = nil,
+    lovecavepast = nil,
+    zlmt = nil,
+    shuzhe = false,
+    modwood = false,
+    tchonmt = nil,
+    cskais = false,
+    dledetree = false,
+    delereeset = nil,
+    treecutset = nil,
+    autobuyset = nil,
+    wood = 7,
+    cswjia = nil,
+    boxOpenConnection = nil,
+    autobuystop = flase,
+    dropdown = {},
+    autocsdx = nil,
+    kuangxiu = nil,
+    xzemuban = false,
+    daiwp = false,
+    stopcar = false
+}
+
 local flags = {
     speed = 0,
     espdoors = false,
@@ -345,6 +420,68 @@ wait(0.1)
 shuaxinlb(true)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/XiaoXuAnZang/UI-Lib/refs/heads/main/V3CHONGZHIUI.txt')))()
 local Window = OrionLib:MakeWindow({IntroText = "XK脚本中心V4",Name = "XK脚本中心 V4丨" ..identifyexecutor() , HidePremium = false, SaveConfig = true, ConfigFolder = ""})
+
+local Tab = Window:MakeTab({
+	Name = "自动发言",
+	Icon = "rbxassetid://131925604610622",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "输入你要说的话",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(txt)
+		bai.saymege = txt
+	end	 
+})
+
+Tab:AddTextbox({
+	Name = "输入说话次数",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(v)
+		bai.saymount = txt
+	end	 
+})
+
+Tab:AddButton ({
+	Name = "说话发言/一次",
+	Callback = function () 
+    bai.sayfast = true
+    for i = 1, bai.saymount do
+        if bai.sayfast == true then
+            game:GetService('ReplicatedStorage').DefaultChatSystemChatEvents.SayMessageRequest:FireServer(bai.saymege,
+                'All')
+        end
+    end
+})
+
+Tab:AddButton ({
+	Name = "停止发言/一次/全自动",
+	Callback = function () 
+    bai.sayfast = false
+	end
+})
+
+Tab:AddToggle({
+	Name = "不移动",
+	Default = false,
+	Callback = function(state)
+    if state then
+        bai.autosay = true
+        while task.wait() do
+            if bai.autosay == true then
+                game:GetService('ReplicatedStorage').DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
+                    bai.saymege, 'All')
+
+            end
+        end
+    else
+        bai.autosay = false
+    end
+	end
+})
 
 local Tab = Window:MakeTab({
 	Name = "DOORS音频",
