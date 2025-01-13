@@ -1,4 +1,79 @@
 --一个破https就搁那装逼，说什么你破解的，我只能说LOL，bro你是用Https抓包抓到的吗，我很看不起你
+local bai = {
+    axedupe = false,
+    soltnumber = "1",
+    waterwalk = false,
+    awaysday = false,
+    awaysdnight = false,
+    nofog = false,
+    axeflying = false,
+    playernamedied = "",
+    tptree = "",
+    moneyaoumt = 1,
+    moneytoplayername = "",
+    donationRecipient = tostring(game.Players.LocalPlayer),
+    autodropae = false,
+    farAxeEquip = nil,
+    cuttreeselect = "Generic",
+    autofarm = false,
+    PlankToBlueprint = nil,
+    plankModel = nil,
+    blueprintModel = nil,
+    saymege = "",
+    autosay = false,
+    saymount = 1,
+    sayfast = false,
+    autofarm1 = false,
+    bringamount = 1,
+    bringtree = false,
+    dxmz = "",
+    color = 0,
+    0,
+    0,
+    zlwjia = "",
+    mtwjia = nil,
+    zix = 1,
+    zlz = 3,
+    axeFling = nil,
+    itemtoopen = "",
+    openItem = nil,
+    car = nil,
+    load = false,
+    autobuyamount = 1,
+    autopick = false,
+    loaddupeaxewaittime = 3.1,
+    walkspeed = 16,
+    JumpPower = 50,
+    pickupaxeamount = 1,
+    whthmose = false,
+    itemset = nil,
+    LoneCaveAxeDetection = nil,
+    cuttree = false,
+    LoneCaveCharacterAddedDetection = nil,
+    LoneCaveDeathDetection = nil,
+    lovecavecutcframe = nil,
+    lovecavepast = nil,
+    zlmt = nil,
+    shuzhe = false,
+    modwood = false,
+    tchonmt = nil,
+    cskais = false,
+    dledetree = false,
+    delereeset = nil,
+    treecutset = nil,
+    autobuyset = nil,
+    wood = 7,
+    cswjia = nil,
+    boxOpenConnection = nil,
+    autobuystop = flase,
+    dropdown = {},
+    autocsdx = nil,
+    kuangxiu = nil,
+    xzemuban = false,
+    daiwp = false,
+    stopcar = false
+}
+
 --不允许二改
 loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoXuAnZang/test-Actuator/refs/heads/main/ThroughSuccess.lua"))()
 local notification = loadstring(game:HttpGet('https://raw.githubusercontent.com/XiaoXuAnZang/test-Actuator/refs/heads/main/notification.lua'))()
@@ -171,81 +246,6 @@ function esp(what,color,core,name)
     
     return ret 
 end
-
-local bai = {
-    axedupe = false,
-    soltnumber = "1",
-    waterwalk = false,
-    awaysday = false,
-    awaysdnight = false,
-    nofog = false,
-    axeflying = false,
-    playernamedied = "",
-    tptree = "",
-    moneyaoumt = 1,
-    moneytoplayername = "",
-    donationRecipient = tostring(game.Players.LocalPlayer),
-    autodropae = false,
-    farAxeEquip = nil,
-    cuttreeselect = "Generic",
-    autofarm = false,
-    PlankToBlueprint = nil,
-    plankModel = nil,
-    blueprintModel = nil,
-    saymege = "",
-    autosay = false,
-    saymount = 1,
-    sayfast = false,
-    autofarm1 = false,
-    bringamount = 1,
-    bringtree = false,
-    dxmz = "",
-    color = 0,
-    0,
-    0,
-    zlwjia = "",
-    mtwjia = nil,
-    zix = 1,
-    zlz = 3,
-    axeFling = nil,
-    itemtoopen = "",
-    openItem = nil,
-    car = nil,
-    load = false,
-    autobuyamount = 1,
-    autopick = false,
-    loaddupeaxewaittime = 3.1,
-    walkspeed = 16,
-    JumpPower = 50,
-    pickupaxeamount = 1,
-    whthmose = false,
-    itemset = nil,
-    LoneCaveAxeDetection = nil,
-    cuttree = false,
-    LoneCaveCharacterAddedDetection = nil,
-    LoneCaveDeathDetection = nil,
-    lovecavecutcframe = nil,
-    lovecavepast = nil,
-    zlmt = nil,
-    shuzhe = false,
-    modwood = false,
-    tchonmt = nil,
-    cskais = false,
-    dledetree = false,
-    delereeset = nil,
-    treecutset = nil,
-    autobuyset = nil,
-    wood = 7,
-    cswjia = nil,
-    boxOpenConnection = nil,
-    autobuystop = flase,
-    dropdown = {},
-    autocsdx = nil,
-    kuangxiu = nil,
-    xzemuban = false,
-    daiwp = false,
-    stopcar = false
-}
 
 local flags = {
     speed = 0,
@@ -440,21 +440,9 @@ Tab:AddTextbox({
 	Name = "输入说话次数",
 	Default = "",
 	TextDisappear = true,
-	Callback = function(v)
+	Callback = function(txt)
 		bai.saymount = txt
 	end	 
-})
-
-Tab:AddButton ({
-	Name = "说话发言/一次",
-	Callback = function () 
-    bai.sayfast = true
-    for i = 1, bai.saymount do
-        if bai.sayfast == true then
-            game:GetService('ReplicatedStorage').DefaultChatSystemChatEvents.SayMessageRequest:FireServer(bai.saymege,
-                'All')
-        end
-    end
 })
 
 Tab:AddButton ({
@@ -464,8 +452,21 @@ Tab:AddButton ({
 	end
 })
 
+Tab:AddButton({
+	Name = "发言一次",
+	Callback = function()
+     bai.sayfast = true
+    for i = 1, bai.saymount do
+        if bai.sayfast == true then
+            game:GetService('ReplicatedStorage').DefaultChatSystemChatEvents.SayMessageRequest:FireServer(bai.saymege,
+                'All')
+        end
+    end
+  	end    
+})
+
 Tab:AddToggle({
-	Name = "不移动",
+	Name = "全自动说话",
 	Default = false,
 	Callback = function(state)
     if state then
@@ -16387,4 +16388,6 @@ game:GetService("ReplicatedStorage"):WaitForChild("ALLTeleportEvent"):FireServer
     end
 	end
 })
+
+
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoFenHG/XilolHHG/refs/heads/main/free"))()
