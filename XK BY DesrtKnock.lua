@@ -2794,7 +2794,7 @@ print("索引开启反挂机")
 		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 		end)      
                 wait(1)
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "XK脚本中心";Text = "防踢开启成功";Icon = "rbxassetid://123804674960064"})Duration = 8;
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "XK脚本中心";Text = "防踢开启成功";Icon = "rbxassetid://106971561084175"})Duration = 8;
     local sound = Instance.new("Sound", workspace)
 sound.SoundId = "rbxassetid://6647898215"
 sound:Play()
@@ -2869,7 +2869,7 @@ end
 wait(0.1)
 shuaxinlb(true)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/DesrtKnock/DesrtKnock-X/refs/heads/main/OrionLib')))()
-local Window = OrionLib:MakeWindow({IntroText = "XK脚本中心V4",Name = "XK脚本中心 V4丨" ..identifyexecutor() , HidePremium = false, SaveConfig = true, ConfigFolder = ""})
+local Window = OrionLib:MakeWindow({IntroText = "XK脚本中心V4",Name = "DesrtKnock team V4 丨XK脚本中心丨" ..identifyexecutor() , HidePremium = false, SaveConfig = true, ConfigFolder = ""})
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 local Tab = Window:MakeTab({
 	Name = "自动发言",
