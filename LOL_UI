@@ -216,7 +216,7 @@ end
       DropShadow.BackgroundTransparency = 1.000
       DropShadow.Position = UDim2.new(0.5, 0, 0.5, 0)
       DropShadow.Size = UDim2.new(1, 10, 1, 10)
-      DropShadow.Image = "rbxassetid://83797717401046" --背景
+      DropShadow.Image = "rbxassetid://92406890543783" --背景
       DropShadow.ImageColor3 = Color3.fromRGB(255,255,255)
       DropShadow.SliceCenter = Rect.new(49, 49, 450, 450)
 
@@ -301,7 +301,7 @@ end
       ScriptTitle.Size = UDim2.new(0, 102, 0, 20)
       ScriptTitle.Font = Enum.Font.GothamSemibold
       ScriptTitle.Text = name
-      ScriptTitle.TextColor3 = Color3.fromRGB(139, 0, 255)
+      ScriptTitle.TextColor3 = Color3.fromRGB(0, 255, 0)
       ScriptTitle.TextSize = 14.000
       ScriptTitle.TextScaled = true
       ScriptTitle.TextXAlignment = Enum.TextXAlignment.Left
@@ -452,10 +452,10 @@ Open.BorderSizePixel = 0
 Open.Size = UDim2.new(2, 3, 2, 3)
 Open.Active = true
 Open.Draggable = true
-Open.Image = "rbxassetid://83797717401046"
+Open.Image = "rbxassetid://113478493756976"
 Open.MouseButton1Click:Connect(function()
   Main.Visible = not Main.Visible
-  Open.Image = Main.Visible and "rbxassetid://128512006232061" or "rbxassetid://95863446814693" --开关的图
+  Open.Image = Main.Visible and "rbxassetid://113478493756976" or "rbxassetid://113478493756976" --开关的图
 end)
 
 UICorner_2.CornerRadius = UDim.new(0, 10)
