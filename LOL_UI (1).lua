@@ -117,7 +117,7 @@ end
 
 function library.new(library, name,theme)
     for _, v in next, services.CoreGui:GetChildren() do
-        if v.Name == "frosty" then
+        if v.Name == "XRX的脚本UI" then
           v:Destroy()
         end
       end
@@ -161,7 +161,7 @@ end
       
       if syn and syn.protect_gui then syn.protect_gui(dogent) end
     
-      dogent.Name = "frosty"
+      dogent.Name = "XRX的脚本UI"
       dogent.Parent = services.CoreGui
       
       function UiDestroy()
@@ -184,7 +184,7 @@ end
       Main.BackgroundColor3 = Background
       Main.BorderColor3 = MainColor
       Main.Position = UDim2.new(0.5, 0, 0.5, 0)
-      Main.Size = UDim2.new(0, 572, 0, 353)
+      Main.Size = UDim2.new(0, 400, 0, 300)
       Main.ZIndex = 1
       Main.Active = true
       Main.Draggable = true
@@ -206,7 +206,7 @@ end
       DropShadowHolder.Parent = Main
       DropShadowHolder.BackgroundTransparency = 1.000
       DropShadowHolder.BorderSizePixel = 0
-      DropShadowHolder.Size = UDim2.new(1, 0, 1, 0)
+      DropShadowHolder.Size = UDim2.new(0.5, 0, 0.5, 0)
       DropShadowHolder.BorderColor3 = Color3.fromRGB(255,255,255)
       DropShadowHolder.ZIndex = 0
 
@@ -215,7 +215,7 @@ end
       DropShadow.AnchorPoint = Vector2.new(0.5, 0.5)
       DropShadow.BackgroundTransparency = 1.000
       DropShadow.Position = UDim2.new(0.5, 0, 0.5, 0)
-      DropShadow.Size = UDim2.new(1, 5, 1, 5)
+      DropShadow.Size = UDim2.new(2, 3, 2, 3)
       DropShadow.Image = "rbxassetid://87676667637319" --背景
       DropShadow.ImageColor3 = Color3.fromRGB(255,255,255)
       DropShadow.SliceCenter = Rect.new(49, 49, 450, 450)
