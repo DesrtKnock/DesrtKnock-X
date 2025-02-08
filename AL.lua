@@ -300,18 +300,18 @@
         TabBtnsL.Padding = UDim.new(0, 12)
         ScriptTitle.Name = "ScriptTitle"
         ScriptTitle.Parent = Side
-        ScriptTitle.BackgroundColor3 = Color3.fromRGB(0, 216, 167)
+        ScriptTitle.BackgroundColor3 = Color3.fromRGB(0, 184, 175)
         ScriptTitle.BackgroundTransparency = 1
         ScriptTitle.Position = UDim2.new(0, 0, 0.00953488424, 0)
         ScriptTitle.Size = UDim2.new(0, 102, 0, 20)
         ScriptTitle.Font = Enum.Font.GothamSemibold
         ScriptTitle.Text = name
-        ScriptTitle.TextColor3 = Color3.fromRGB(0, 216, 167)
+        ScriptTitle.TextColor3 = Color3.fromRGB(0, 184, 175)
         ScriptTitle.TextSize = 14
         ScriptTitle.TextScaled = true
         ScriptTitle.TextXAlignment = Enum.TextXAlignment.Left
         UIGradientTitle.Parent = ScriptTitle
-        local function NPLHKB_fake_script()
+        --[[local function NPLHKB_fake_script()
             local script = Instance.new("LocalScript", ScriptTitle)
             local button = script.Parent
             local gradient = button.UIGradient
@@ -399,7 +399,7 @@
             function()
                 TabBtns.CanvasSize = UDim2.new(0, 0, 0, TabBtnsL.AbsoluteContentSize.Y + 18)
             end
-        )
+        )]]
 --[[        Open.Name = "Open"
         Open.Parent = dogent
         Open.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
@@ -536,7 +536,7 @@
                 SectionToggle.Size = UDim2.new(0, 26, 0, 26)
                 Objs.Name = "Objs"
                 Objs.Parent = Section
-                Objs.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                Objs.BackgroundColor3 = Color3.fromRGB(0, 184, 175)
                 Objs.BackgroundTransparency = 1
                 Objs.BorderSizePixel = 0
                 Objs.Position = UDim2.new(0, 6, 0, 36)
