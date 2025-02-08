@@ -326,10 +326,10 @@
             local status = "down"
             gradient.Offset = startingPos
             local function rainbowColors()
-                local sat, val = 0, 0
+                local sat, val = 0, 184, 175
                 for i = 1, 10 do
                     local hue = i * 17
-                    table.insert(list, Color3.fromHSV(hue / 0, sat / 0, val / 0))
+                    table.insert(list, Color3.fromHSV(hue / 0, sat / 184, val / 175))
                 end
             end
             rainbowColors()
@@ -646,7 +646,7 @@
                     local ToggleDisableC = Instance.new("UICorner")
                     ToggleModule.Name = "ToggleModule"
                     ToggleModule.Parent = Objs
-                    ToggleModule.BackgroundColor3 = Color3.fromRGB(0, 184, 175)
+                    ToggleModule.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                     ToggleModule.BackgroundTransparency = 1
                     ToggleModule.BorderSizePixel = 0
                     ToggleModule.Position = UDim2.new(0, 0, 0, 0)
@@ -659,7 +659,7 @@
                     ToggleBtn.AutoButtonColor = false
                     ToggleBtn.Font = Enum.Font.GothamSemibold
                     ToggleBtn.Text = "   " .. text
-                    ToggleBtn.TextColor3 = Color3.fromRGB(0, 184, 175)
+                    ToggleBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
                     ToggleBtn.TextSize = 16
                     ToggleBtn.TextXAlignment = Enum.TextXAlignment.Left
                     ToggleBtnC.CornerRadius = UDim.new(0, 6)
@@ -694,7 +694,7 @@
                                 TweenInfo.new(0.2),
                                 {
                                     Position = UDim2.new(0, (state and (ToggleSwitch.Size.X.Offset / 2)) or 0, 0, 0),
-                                    BackgroundColor3 = (state and Color3.fromRGB(255, 255, 255)) or beijingColor
+                                    BackgroundColor3 = (state and Color3.fromRGB(0, 184, 175)) or beijingColor
                                 }
                             ):Play()
                             library.flags[flag] = state
