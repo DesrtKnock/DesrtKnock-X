@@ -311,7 +311,7 @@
         ScriptTitle.TextScaled = true
         ScriptTitle.TextXAlignment = Enum.TextXAlignment.Left
         UIGradientTitle.Parent = ScriptTitle
-        --[[local function NPLHKB_fake_script()
+        local function NPLHKB_fake_script()
             local script = Instance.new("LocalScript", ScriptTitle)
             local button = script.Parent
             local gradient = button.UIGradient
@@ -326,10 +326,10 @@
             local status = "down"
             gradient.Offset = startingPos
             local function rainbowColors()
-                local sat, val = 255, 255
+                local sat, val = 0, 0
                 for i = 1, 10 do
                     local hue = i * 17
-                    table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255))
+                    table.insert(list, Color3.fromHSV(hue / 0, sat / 0, val / 0))
                 end
             end
             rainbowColors()
@@ -399,7 +399,7 @@
             function()
                 TabBtns.CanvasSize = UDim2.new(0, 0, 0, TabBtnsL.AbsoluteContentSize.Y + 18)
             end
-        )]]
+        )
 --[[        Open.Name = "Open"
         Open.Parent = dogent
         Open.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
@@ -646,7 +646,7 @@
                     local ToggleDisableC = Instance.new("UICorner")
                     ToggleModule.Name = "ToggleModule"
                     ToggleModule.Parent = Objs
-                    ToggleModule.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    ToggleModule.BackgroundColor3 = Color3.fromRGB(0, 184, 175)
                     ToggleModule.BackgroundTransparency = 1
                     ToggleModule.BorderSizePixel = 0
                     ToggleModule.Position = UDim2.new(0, 0, 0, 0)
@@ -659,7 +659,7 @@
                     ToggleBtn.AutoButtonColor = false
                     ToggleBtn.Font = Enum.Font.GothamSemibold
                     ToggleBtn.Text = "   " .. text
-                    ToggleBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    ToggleBtn.TextColor3 = Color3.fromRGB(0, 184, 175)
                     ToggleBtn.TextSize = 16
                     ToggleBtn.TextXAlignment = Enum.TextXAlignment.Left
                     ToggleBtnC.CornerRadius = UDim.new(0, 6)
