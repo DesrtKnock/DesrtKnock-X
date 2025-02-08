@@ -646,7 +646,7 @@
                     local ToggleDisableC = Instance.new("UICorner")
                     ToggleModule.Name = "ToggleModule"
                     ToggleModule.Parent = Objs
-                    ToggleModule.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    ToggleModule.BackgroundColor3 = Color3.fromRGB(0, 184, 175)
                     ToggleModule.BackgroundTransparency = 1
                     ToggleModule.BorderSizePixel = 0
                     ToggleModule.Position = UDim2.new(0, 0, 0, 0)
