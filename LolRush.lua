@@ -28,7 +28,7 @@ function Ripple(obj)
 		Ripple.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		Ripple.BackgroundTransparency = 1.000
 		Ripple.ZIndex = 8
-		Ripple.Image = "rbxassetid://18254581416"
+		Ripple.Image = "rbxassetid://2708891598"
 		Ripple.ImageTransparency = 0.800
 		Ripple.ScaleType = Enum.ScaleType.Fit
 		Ripple.ImageColor3 = Color3.fromRGB(255, 255, 255)
@@ -211,7 +211,7 @@ end
       DropShadow.BackgroundTransparency = 1.000
       DropShadow.Position = UDim2.new(0.5, 0, 0.5, 0)
       DropShadow.Size = UDim2.new(1, 10, 1, 10)
-      DropShadow.Image = "rbxassetid://101055076147106"--背景
+      DropShadow.Image = "rbxassetid://101055076147106"
       DropShadow.ImageColor3 = Color3.fromRGB(255,255,255)
       DropShadow.SliceCenter = Rect.new(49, 49, 450, 450)
 
@@ -290,13 +290,13 @@ end
       
       ScriptTitle.Name = "ScriptTitle"
       ScriptTitle.Parent = Side
-      ScriptTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+      ScriptTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
       ScriptTitle.BackgroundTransparency = 1.000
       ScriptTitle.Position = UDim2.new(0, 0, 0.00953488424, 0)
       ScriptTitle.Size = UDim2.new(0, 102, 0, 20)
       ScriptTitle.Font = Enum.Font.GothamSemibold
       ScriptTitle.Text = name
-      ScriptTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+      ScriptTitle.TextColor3 = Color3.fromRGB(255, 255, 0)
       ScriptTitle.TextSize = 14.000
       ScriptTitle.TextScaled = true
       ScriptTitle.TextXAlignment = Enum.TextXAlignment.Left
@@ -322,7 +322,7 @@ end
             local sat, val = 255, 255 
             for i = 1, 10 do 
                 local hue = i * 17 
-                table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255))
+                table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 0))
             end
         end
         rainbowColors()
@@ -413,14 +413,14 @@ end
       Open.Position = UDim2.new(0.00829315186, 0, 0.31107837, 0)
       Open.Size = UDim2.new(0, 61, 0, 32)
       Open.Font = Enum.Font.SourceSans
-      Open.Text = "关闭空/打开空"
+      Open.Text = "隐藏/打开"
       Open.TextColor3 = Color3.fromRGB(255, 255, 255)
       Open.TextSize = 14.000
       Open.Active = true
       Open.Draggable = true
       Open.MouseButton1Click:Connect(function()
           Main.Visible = not Main.Visible
-          Open.Text=Main.Visible and "点击隐藏空中心" or "点击打开空中心"
+          Open.Text=Main.Visible and "隐藏" or "打开"
       end)
       UIG.Parent = Open]]
       local window = {}
@@ -532,14 +532,14 @@ end
           SectionOpen.BorderSizePixel = 0
           SectionOpen.Position = UDim2.new(0, -33, 0, 5)
           SectionOpen.Size = UDim2.new(0, 26, 0, 26)
-          SectionOpen.Image = "http://www.roblox.com/asset/?id=18256508438"
+          SectionOpen.Image = "http://www.roblox.com/asset/?id=6031302934"
           
           SectionOpened.Name = "SectionOpened"
           SectionOpened.Parent = SectionOpen
           SectionOpened.BackgroundTransparency = 1.000
           SectionOpened.BorderSizePixel = 0
           SectionOpened.Size = UDim2.new(0, 26, 0, 26)
-          SectionOpened.Image = "http://www.roblox.com/asset/?id=18256508438"
+          SectionOpened.Image = "http://www.roblox.com/asset/?id=6031302932"
           SectionOpened.ImageTransparency = 1.000
     
           SectionToggle.Name = "SectionToggle"
