@@ -2696,6 +2696,57 @@ end
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+local OpenUI = Instance.new("ScreenGui")
+OpenUI.Name = "BlurEffectGui"
+OpenUI.Parent = game.CoreGui
+OpenUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+OpenUI.AutoLocalize = false
+
+local BlurEffect = Instance.new("ImageLabel")
+BlurEffect.Name = "BlurEffect"
+BlurEffect.BackgroundTransparency = 1
+BlurEffect.Size = UDim2.new(1, 0, 1, 0) -- Full screen size
+BlurEffect.Image = "rbxassetid://76277644863542" -- Replace with your image asset
+BlurEffect.ImageTransparency = 0 -- Fully opaque initially
+BlurEffect.Parent = OpenUI
+
+-- Set initial blur strength
+BlurEffect.ImageFilter = Instance.new("ImageFilter")
+BlurEffect.ImageFilter.Color = Color3.new(0, 0, 0)
+BlurEffect.ImageFilter.ColorOffset = 0
+BlurEffect.ImageFilter.Blur = 10 -- Set initial blur strength
+BlurEffect.ImageFilter.Transparency = 1
+BlurEffect.ImageFilter.Rotation = 0
+
+local TweenInfo = TweenInfo.new(
+    2, -- Duration of tween in seconds
+    Enum.EasingStyle.Linear, -- Easing style
+    Enum.EasingDirection.Out, -- Easing direction
+    0, -- Repeat count
+    false, -- Reverses tween after last repeat
+    0 -- Delay time before tween starts
+)
+
+local function FadeOutEffect()
+    local TweenService = game:GetService("TweenService")
+    local Properties = {
+        Blur = 0 -- Set to 0 to make it fully clear
+     }
+     local Tween = TweenService:Create(BlurEffect.ImageFilter, TweenInfo, Properties)
+     Tween:Play()
+     Tween.Completed:Connect(function()
+         -- Once the tween is completed, destroy the ScreenGui
+         OpenUI:Destroy()
+     end)
+end
+
+-- Start the fade out effect
+FadeOutEffect()
+
+wait(10)
+game:GetService("CoreGui").BlurEffectGui:Destroy()
+
 local flags = {
     speed = 0,
     espdoors = false,
@@ -2792,38 +2843,6 @@ print("索引开启反挂机")
 		   wait(1)
 		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 		end)      
-                wait(1)
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "XK脚本中心";Text = "防踢开启成功";Icon = "rbxassetid://106971561084175"})Duration = 8;
-    local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
-local sound = Instance.new("Sound", workspace)
-sound.SoundId = "rbxassetid://6647898215"
-sound:Play()
     
 Start = tick()
 wait(2)
@@ -18588,7 +18607,4 @@ end
 end)
 	end
 })
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoFenHG/XilolHHG/refs/heads/main/free"))()
-		
-		game:GetService("CoreGui").RobloxGui.SettingsClippingShield.SettingsShield.MenuContainer.PageViewClipper.PageView.PageViewInnerFrame.Players.ButtonsContainer.LeaveButtonButton:Destroy()
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
