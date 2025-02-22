@@ -156,7 +156,7 @@ end
       
       if syn and syn.protect_gui then syn.protect_gui(dogent) end
     
-      dogent.Name = "frosty"
+      dogent.Name = "XRX工作室"
       dogent.Parent = services.CoreGui
       
       function UiDestroy()
@@ -195,7 +195,7 @@ end
       drag(Main)
       
       UICornerMain.Parent = Main
-      UICornerMain.CornerRadius = UDim.new(0,3)
+      UICornerMain.CornerRadius = UDim.new(0,1.5)
       
       DropShadowHolder.Name = "DropShadowHolder"
       DropShadowHolder.Parent = Main
