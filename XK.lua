@@ -2744,7 +2744,6 @@ end
 -- Start the fade out effect
 FadeOutEffect()
 
-wait(10)
 game:GetService("CoreGui").BlurEffectGui:Destroy()
 
 local flags = {
