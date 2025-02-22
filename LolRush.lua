@@ -156,7 +156,7 @@ end
       
       if syn and syn.protect_gui then syn.protect_gui(dogent) end
     
-      dogent.Name = "XRX工作室"
+      dogent.Name = "frosty"
       dogent.Parent = services.CoreGui
       
       function UiDestroy()
@@ -195,7 +195,7 @@ end
       drag(Main)
       
       UICornerMain.Parent = Main
-      UICornerMain.CornerRadius = UDim.new(0,1.5)
+      UICornerMain.CornerRadius = UDim.new(0,3)
       
       DropShadowHolder.Name = "DropShadowHolder"
       DropShadowHolder.Parent = Main
@@ -288,7 +288,7 @@ end
       TabBtnsL.SortOrder = Enum.SortOrder.LayoutOrder
       TabBtnsL.Padding = UDim.new(0, 12)
       
-      ScriptTitle.Name = "ScriptTitle"
+      ScriptTitle.Name = "脚本名字"
       ScriptTitle.Parent = Side
       ScriptTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
       ScriptTitle.BackgroundTransparency = 1.000
@@ -322,7 +322,7 @@ end
             local sat, val = 255, 255 
             for i = 1, 10 do 
                 local hue = i * 17 
-                table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 0))
+                table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255))
             end
         end
         rainbowColors()
