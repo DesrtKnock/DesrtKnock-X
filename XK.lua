@@ -2697,54 +2697,6 @@ end
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-local OpenUI = Instance.new("ScreenGui")
-OpenUI.Name = "BlurEffectGui"
-OpenUI.Parent = game.CoreGui
-OpenUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-OpenUI.AutoLocalize = false
-
-local BlurEffect = Instance.new("ImageLabel")
-BlurEffect.Name = "BlurEffect"
-BlurEffect.BackgroundTransparency = 1
-BlurEffect.Size = UDim2.new(1, 0, 1, 0) -- Full screen size
-BlurEffect.Image = "rbxassetid://76277644863542" -- Replace with your image asset
-BlurEffect.ImageTransparency = 0 -- Fully opaque initially
-BlurEffect.Parent = OpenUI
-
--- Set initial blur strength
-BlurEffect.ImageFilter = Instance.new("ImageFilter")
-BlurEffect.ImageFilter.Color = Color3.new(0, 0, 0)
-BlurEffect.ImageFilter.ColorOffset = 0
-BlurEffect.ImageFilter.Blur = 10 -- Set initial blur strength
-BlurEffect.ImageFilter.Transparency = 1
-BlurEffect.ImageFilter.Rotation = 0
-
-local TweenInfo = TweenInfo.new(
-    2, -- Duration of tween in seconds
-    Enum.EasingStyle.Linear, -- Easing style
-    Enum.EasingDirection.Out, -- Easing direction
-    0, -- Repeat count
-    false, -- Reverses tween after last repeat
-    0 -- Delay time before tween starts
-)
-
-local function FadeOutEffect()
-    local TweenService = game:GetService("TweenService")
-    local Properties = {
-        Blur = 0 -- Set to 0 to make it fully clear
-     }
-     local Tween = TweenService:Create(BlurEffect.ImageFilter, TweenInfo, Properties)
-     Tween:Play()
-     Tween.Completed:Connect(function()
-         -- Once the tween is completed, destroy the ScreenGui
-         OpenUI:Destroy()
-     end)
-end
-
--- Start the fade out effect
-FadeOutEffect()
-
-game:GetService("CoreGui").BlurEffectGui:Destroy()
 
 local flags = {
     speed = 0,
