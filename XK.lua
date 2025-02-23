@@ -2838,7 +2838,7 @@ end
 wait(0.1)
 shuaxinlb(true)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/DesrtKnock/DesrtKnock-X/refs/heads/main/OrionLib')))()
-local Window = OrionLib:MakeWindow({IntroText = "XK脚本中心V4",Name = "DesrtKnock team V4 丨XK脚本中心丨" ..identifyexecutor() , HidePremium = false, SaveConfig = true, ConfigFolder = ""})
+local Window = OrionLib:MakeWindow({IntroText = "XK脚本中心V4",Name = "XK脚本中心 V3" ..identifyexecutor() , HidePremium = false, SaveConfig = true, ConfigFolder = ""})
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 local Tab = Window:MakeTab({
 	Name = "自动发言",
