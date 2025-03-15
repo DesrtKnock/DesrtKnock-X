@@ -1,0 +1,54 @@
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+
+local platformOffset = Vector3.new(0, 80, 0)
+local platformSize = Vector3.new(10000, 20, 10000)  
+
+
+local platform = Instance.new("Part")
+platform.Size = platformSize
+platform.Anchored = true
+platform.CanCollide = true
+platform.Color = Color3.new(0.8, 0.8, 0.8)
+platform.Transparency = 0
+platform.Position = humanoidRootPart.Position + platformOffset
+platform.Parent = workspace
+
+
+for _ = 1, 3 do  
+    RunService.Heartbeat:Wait()
+end
+
+
+local platformTopSurfaceY = platform.Position.Y + (platform.Size.Y/2)
+
+
+local function GetSafeTeleportPosition()
+    
+    local hipHeight = humanoid.HipHeight
+    local bodyHeight = 2  
+    
+    
+    return Vector3.new(
+        platform.Position.X,
+        platformTopSurfaceY + hipHeight + bodyHeight,  
+        platform.Position.Z
+    )
+end
+
+
+humanoid:ChangeState(Enum.HumanoidStateType.FallingDown)
+task.wait(0.2)
+
+
+humanoidRootPart.CFrame = CFrame.new(GetSafeTeleportPosition())
+
+
+task.wait(0.5)
+humanoidRootPart.CFrame = CFrame.new(GetSafeTeleportPosition())
